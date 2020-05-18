@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="71068433-0962-4317-b78b-30b99f2fb138" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/MaterialTable.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SideBar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SummaryDashboardTable.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TableWithSorting.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Toolbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1bnXTzgP8bjX7C9nBXWpu9bfKGH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="71068433-0962-4317-b78b-30b99f2fb138" name="Default Changelist" comment="" />
+      <created>1589268842033</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589268842033</updated>
+      <workItem from="1589268843446" duration="2763000" />
+      <workItem from="1589351375814" duration="7343000" />
+      <workItem from="1589447824735" duration="824000" />
+      <workItem from="1589780516975" duration="4012000" />
+      <workItem from="1589789360704" duration="4613000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="608" y="323" width="704" height="522" key="find.popup" timestamp="1589783597440">
+      <screen x="0" y="27" width="1920" height="1116" />
+    </state>
+    <state x="608" y="323" width="704" height="522" key="find.popup/0.27.1920.1116/1920.0.1920.1200@0.27.1920.1116" timestamp="1589783597440" />
+    <state x="624" y="269" key="run.anything.popup" timestamp="1589784243007">
+      <screen x="0" y="27" width="1920" height="1116" />
+    </state>
+    <state x="624" y="269" key="run.anything.popup/0.27.1920.1116/1920.0.1920.1200@0.27.1920.1116" timestamp="1589784243007" />
+  </component>
+</project>
