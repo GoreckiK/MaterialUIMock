@@ -11,7 +11,6 @@ import SummaryDashboardTable from "../components/SummaryDashboardTable";
 import ToolbarWithSearch from "../components/Toolbar";
 import SideBar from "../components/SideBar";
 import TableWithSorting from "../components/TableWithSorting";
-import Drop from '../components/Drop';
 
 // function TabPanel(props) {
 //     const { children, value, index, ...other } = props;
@@ -60,19 +59,10 @@ export default function MainView() {
     // const handleChange = (event, newValue) => {
     //     setValue(newValue);
     // };
-    const mainStyle = {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        width: "100%",
-        height: "100%",
-        marginTop: "30px"
-    };
 
     return (
-        <div style={mainStyle}>
+        <div style={{display: "flex", flexDirection: "column", alignItems: "center", width: "100%", height: "100%"}}>
             <SummaryDashboardTable/>
-            <Drop/>
         </div>
         // <div className={classes.root}>
         //     <AppBar position="static">

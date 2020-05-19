@@ -72,7 +72,9 @@ export default function MainView() {
     return (
         <div style={mainStyle}>
             <SummaryDashboardTable/>
-            <Drop/>
+            <div style={{width: "80%", height: "400px", border: '1px solid black', marginTop: "50px"}}>
+                <Drop/>
+            </div>
         </div>
         // <div className={classes.root}>
         //     <AppBar position="static">

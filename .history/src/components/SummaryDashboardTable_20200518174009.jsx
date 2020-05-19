@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import {Paper, Table, Tab} from "@material-ui/core";
+import React from "react";
+import {Paper, Table} from "@material-ui/core";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
@@ -7,7 +7,6 @@ import TableBody from "@material-ui/core/TableBody";
 
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
-import { ItemType } from "../constants";
 // import update from 'immutability-helper';
 
 // const type = 'DragableBodyRow';
@@ -55,52 +54,43 @@ const SummaryDashboardTable = () => {
         {location: "LA", name: 'Janek', age: 35},
         {location: "NY", name: 'Michał', age: 45}
     ];
-    const [{ isDragging }, drag] = useDrag({
-        item: { type: ItemType.CELL },
-        collect: monitor => ({ isDragging: !!monitor.isDragging })
-    })
 
-    const [{ isOver }, drop] = useDrop({
-        accept: ItemType.CELL,
-        collect: monitor => {
-            return {
-                isOver: monitor.isOver()
-            };
-        },
-        drop: item => {
-            console.log(item)
-        },
-    })
+    const createRow = () => {
+        return (
+            <TableRow>
+                <TableCell>
+                    first
+                </TableCell>
+                <TableCell>
+                    second
+                </TableCell>
+                <TableCell>
+                    third
+                </TableCell>
+            </TableRow>
+        );
+    };
 
-    useEffect(() => {
-        console.log(isDragging);
-        console.log(isOver);
-    }, [isDragging, isOver])
-      
     return (
         <Paper style={{height: "40%", width: "40%"}}>
-                <Table>
-                    <TableHead>
-                        <TableRow>
-                            {headers.map((header) => {
-                                return (
-                                    <TableCell key={header} ref={drag}>{header}</TableCell>
-                                )
-                            })}
-                        </TableRow>
-                        </TableHead>
-                    <TableBody>
-                        {users.map((user, id) => {
+            <Table>
+                <TableHead>
+                    <TableRow>
+                        {headers.map((header, id) => {
                             return (
-                                <TableRow key={id+Math.floor(Math.random()*10000)}>
-                                    <TableCell key={id+Math.floor(Math.random()*10000)}>{user.location}</TableCell>
-                                    <TableCell key={id+Math.floor(Math.random()*10000)}>{user.name}</TableCell>
-                                    <TableCell key={id+Math.floor(Math.random()*10000)}>{user.age}</TableCell>
-                                </TableRow>
-                            );
+                                <TableCell key={id}>{header}</TableCell>
+                            )
                         })}
-                    </TableBody>
-                </Table>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {/*<DragableBodyRow index={0}>*/}
+                        {createRow()}
+                        {createRow()}
+                        {createRow()}
+                    {/*</DragableBodyRow>*/}
+                </TableBody>
+            </Table>
         </Paper>
     );
 };

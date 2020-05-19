@@ -82,9 +82,9 @@ const SummaryDashboardTable = () => {
                 <Table>
                     <TableHead>
                         <TableRow>
-                            {headers.map((header) => {
+                            {headers.map((header, id) => {
                                 return (
-                                    <TableCell key={header} ref={drag}>{header}</TableCell>
+                                    <TableCell key={id+Math.floor(Math.random()*10000)} ref={drag}>{header}</TableCell>
                                 )
                             })}
                         </TableRow>

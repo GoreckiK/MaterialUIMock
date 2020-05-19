@@ -7,7 +7,7 @@ import Backend from 'react-dnd-html5-backend';
 function App() {
   return (
     <div className="App">
-      <DndProvider backend={Backend}>
+      <DndProvider backend={html5}>
         <MainView/>
       </DndProvider>
     </div>

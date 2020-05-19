@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {Paper, Table, Tab} from "@material-ui/core";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
@@ -55,52 +55,56 @@ const SummaryDashboardTable = () => {
         {location: "LA", name: 'Janek', age: 35},
         {location: "NY", name: 'Michał', age: 45}
     ];
-    const [{ isDragging }, drag] = useDrag({
+    const [, drag] = useDrag({
         item: { type: ItemType.CELL },
         collect: monitor => ({ isDragging: !!monitor.isDragging })
     })
 
-    const [{ isOver }, drop] = useDrop({
-        accept: ItemType.CELL,
+    const [] = useDrop(() => {
+        accept: type,
         collect: monitor => {
+            const { index: dragIndex } = monitor.getItem() || {};
+            if (dragIndex === index) {
+                return {};
+            }
             return {
-                isOver: monitor.isOver()
+                isOver: monitor.isOver(),
+                dropClassName: dragIndex < index ? ' drop-over-downward' : ' drop-over-upward',
             };
         },
         drop: item => {
-            console.log(item)
+            moveRow(item.index, index);
         },
     })
 
-    useEffect(() => {
-        console.log(isDragging);
-        console.log(isOver);
-    }, [isDragging, isOver])
-      
     return (
         <Paper style={{height: "40%", width: "40%"}}>
+            {/* <DndProvider backend={HTML5Backend}> */}
                 <Table>
                     <TableHead>
-                        <TableRow>
-                            {headers.map((header) => {
+                    <DndProvider backend={HTML5Backend}>
+                        <TableRow ref={drag}>
+                            {headers.map((header, id) => {
                                 return (
-                                    <TableCell key={header} ref={drag}>{header}</TableCell>
+                                    <TableCell key={id}>{header}</TableCell>
                                 )
                             })}
                         </TableRow>
+                        </DndProvider>
                         </TableHead>
                     <TableBody>
                         {users.map((user, id) => {
                             return (
-                                <TableRow key={id+Math.floor(Math.random()*10000)}>
-                                    <TableCell key={id+Math.floor(Math.random()*10000)}>{user.location}</TableCell>
-                                    <TableCell key={id+Math.floor(Math.random()*10000)}>{user.name}</TableCell>
-                                    <TableCell key={id+Math.floor(Math.random()*10000)}>{user.age}</TableCell>
+                                <TableRow key={id}>
+                                    <TableCell key={id}>{user.location}</TableCell>
+                                    <TableCell key={id}>{user.name}</TableCell>
+                                    <TableCell key={id}>{user.age}</TableCell>
                                 </TableRow>
                             );
                         })}
                     </TableBody>
                 </Table>
+            {/* </DndProvider> */}
         </Paper>
     );
 };

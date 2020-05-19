@@ -92,7 +92,7 @@ const SummaryDashboardTable = () => {
                     <TableBody>
                         {users.map((user, id) => {
                             return (
-                                <TableRow key={id+Math.floor(Math.random()*10000)}>
+                                <TableRow key={}>
                                     <TableCell key={id+Math.floor(Math.random()*10000)}>{user.location}</TableCell>
                                     <TableCell key={id+Math.floor(Math.random()*10000)}>{user.name}</TableCell>
                                     <TableCell key={id+Math.floor(Math.random()*10000)}>{user.age}</TableCell>

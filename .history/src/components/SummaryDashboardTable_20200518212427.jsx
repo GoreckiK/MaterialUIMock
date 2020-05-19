@@ -82,9 +82,9 @@ const SummaryDashboardTable = () => {
                 <Table>
                     <TableHead>
                         <TableRow>
-                            {headers.map((header) => {
+                            {headers.map((header, id) => {
                                 return (
-                                    <TableCell key={header} ref={drag}>{header}</TableCell>
+                                    <TableCell key={id+Math.floor(Math.random()*10000)} ref={drag}>{header}</TableCell>
                                 )
                             })}
                         </TableRow>
@@ -94,7 +94,7 @@ const SummaryDashboardTable = () => {
                             return (
                                 <TableRow key={id+Math.floor(Math.random()*10000)}>
                                     <TableCell key={id+Math.floor(Math.random()*10000)}>{user.location}</TableCell>
-                                    <TableCell key={id+Math.floor(Math.random()*10000)}>{user.name}</TableCell>
+                                    <TableCell key={id+Math.floor(Math.random()*10000)}></TableCell>
                                     <TableCell key={id+Math.floor(Math.random()*10000)}>{user.age}</TableCell>
                                 </TableRow>
                             );

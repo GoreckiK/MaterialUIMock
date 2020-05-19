@@ -11,7 +11,6 @@ import SummaryDashboardTable from "../components/SummaryDashboardTable";
 import ToolbarWithSearch from "../components/Toolbar";
 import SideBar from "../components/SideBar";
 import TableWithSorting from "../components/TableWithSorting";
-import Drop from '../components/Drop';
 
 // function TabPanel(props) {
 //     const { children, value, index, ...other } = props;
@@ -72,7 +71,9 @@ export default function MainView() {
     return (
         <div style={mainStyle}>
             <SummaryDashboardTable/>
-            <Drop/>
+            <div style={{width: "100%", height: "400px", border: '1px solid black'}}>
+                new Line
+            </div>
         </div>
         // <div className={classes.root}>
         //     <AppBar position="static">
