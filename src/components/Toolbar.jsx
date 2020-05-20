@@ -1,3 +1,5 @@
+// This component is taken straight from docs with little adjustments https://material-ui.com/components/app-bar/#SearchAppBar.js
+
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -66,8 +68,12 @@ const useStyles = makeStyles((theme) => ({
 export default function ToolbarWithSearch() {
     const classes = useStyles();
 
+    const style = {
+        width: '100%'
+    };
+
     return (
-        <div className={classes.root}>
+        <div className={classes.root} style={style}>
             <AppBar position="static">
                 <Toolbar>
                     <IconButton

@@ -2,14 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71068433-0962-4317-b78b-30b99f2fb138" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/MaterialTable.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SideBar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SummaryDashboardTable.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TableWithSorting.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Toolbar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Cell.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/EmptyCell.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TableComponent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TreeView.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Codeburst.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Drop.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MaterialTable.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SideBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SummaryDashboardTable.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TableWithSorting.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Toolbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Toolbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/MainView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/MainView.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +71,9 @@
       <workItem from="1589351375814" duration="7343000" />
       <workItem from="1589447824735" duration="824000" />
       <workItem from="1589780516975" duration="4012000" />
-      <workItem from="1589789360704" duration="4613000" />
+      <workItem from="1589789360704" duration="5595000" />
+      <workItem from="1589875270207" duration="605000" />
+      <workItem from="1589886389453" duration="22460000" />
     </task>
     <servers />
   </component>
@@ -73,13 +81,21 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="608" y="323" width="704" height="522" key="find.popup" timestamp="1589783597440">
+    <state x="693" y="333" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589960491744">
       <screen x="0" y="27" width="1920" height="1116" />
     </state>
-    <state x="608" y="323" width="704" height="522" key="find.popup/0.27.1920.1116/1920.0.1920.1200@0.27.1920.1116" timestamp="1589783597440" />
-    <state x="624" y="269" key="run.anything.popup" timestamp="1589784243007">
+    <state x="693" y="333" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1116/1920.0.1920.1200@0.27.1920.1116" timestamp="1589960491744" />
+    <state x="608" y="323" width="704" height="522" key="find.popup" timestamp="1589909096549">
       <screen x="0" y="27" width="1920" height="1116" />
     </state>
-    <state x="624" y="269" key="run.anything.popup/0.27.1920.1116/1920.0.1920.1200@0.27.1920.1116" timestamp="1589784243007" />
+    <state x="608" y="323" width="704" height="522" key="find.popup/0.27.1920.1116/1920.0.1920.1200@0.27.1920.1116" timestamp="1589909096549" />
+    <state x="624" y="269" key="run.anything.popup" timestamp="1589960238681">
+      <screen x="0" y="27" width="1920" height="1116" />
+    </state>
+    <state x="624" y="269" key="run.anything.popup/0.27.1920.1116/1920.0.1920.1200@0.27.1920.1116" timestamp="1589960238681" />
+    <state x="623" y="273" width="672" height="678" key="search.everywhere.popup" timestamp="1589905361412">
+      <screen x="0" y="27" width="1920" height="1116" />
+    </state>
+    <state x="623" y="273" width="672" height="678" key="search.everywhere.popup/0.27.1920.1116/1920.0.1920.1200@0.27.1920.1116" timestamp="1589905361412" />
   </component>
 </project>

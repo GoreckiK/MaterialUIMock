@@ -1,15 +1,13 @@
-import React from 'react';
+// This component is taken straight from docs with little adjustments https://material-ui.com/components/drawers/#MiniDrawer.js
+
+import React, {useState} from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
@@ -17,6 +15,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import TableComponent from "./TableComponent";
+import MaterialTreeView from "./TreeView";
 
 const drawerWidth = 240;
 
@@ -85,42 +85,26 @@ const useStyles = makeStyles((theme) => ({
 export default function SideBar() {
     const classes = useStyles();
     const theme = useTheme();
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
+    const [drawerIndex, setDrawerIndex] = useState(0);
 
-    const handleDrawerOpen = () => {
-        setOpen(true);
+    const componentMap = {
+        0: (<Manual/>),
+        1: (<TableComponent/>),
+        2: (<MaterialTreeView/>)
     };
 
-    const handleDrawerClose = () => {
-        setOpen(false);
+    const handleDrawerOpenClose = () => {
+        setOpen(!open);
+    };
+
+    const handleSideBarItemClick = (index) => {
+        setDrawerIndex(index);
     };
 
     return (
         <div className={classes.root}>
             <CssBaseline />
-            <AppBar
-                position="fixed"
-                className={clsx(classes.appBar, {
-                    [classes.appBarShift]: open,
-                })}
-            >
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        className={clsx(classes.menuButton, {
-                            [classes.hide]: open,
-                        })}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" noWrap>
-                        Mini variant drawer
-                    </Typography>
-                </Toolbar>
-            </AppBar>
             <Drawer
                 variant="permanent"
                 className={clsx(classes.drawer, {
@@ -135,23 +119,14 @@ export default function SideBar() {
                 }}
             >
                 <div className={classes.toolbar}>
-                    <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+                    <IconButton onClick={handleDrawerOpenClose}>
+                        {theme.direction !== 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
                     </IconButton>
                 </div>
                 <Divider />
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
-                <Divider />
-                <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem button key={text}>
+                    {['Manual', 'Dashboard Table', 'Tree View', 'IMS', 'Chart'].map((text, index) => (
+                        <ListItem button key={text} onClick={() => handleSideBarItemClick(index)}>
                             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                             <ListItemText primary={text} />
                         </ListItem>
@@ -160,30 +135,23 @@ export default function SideBar() {
             </Drawer>
             <main className={classes.content}>
                 <div className={classes.toolbar} />
-                <Typography paragraph>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-                    facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-                    gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-                    donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-                    adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-                    Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-                    imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-                    arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-                    donec massa sapien faucibus et molestie ac.
-                </Typography>
-                <Typography paragraph>
-                    Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-                    facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-                    tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
-                    consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-                    vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
-                    hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-                    tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
-                    nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
-                    accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-                </Typography>
+                {componentMap[drawerIndex]}
             </main>
         </div>
     );
 }
+
+const Manual = () => (
+    <div style={{textAlign: 'left'}}>
+        <h3>Intro:</h3>
+        <p>Skupiłem się głównie na przedstawieniu poszczególnych komponentów. Jeżeli chodzi o możliwości ich stylizacji to są ogromne, dzięki dostępnemu API.
+        Tree View jest na tą chwilę w "labie", można instalować z paczki @material-ui/lab, za jakiś czas zostanie dodana do core'a.</p>
+        <p>Głównie zwróćcie uwagę na komponent tabeli. Jak już wspomniałem MaterialUI nie ma w API drag&dropa tak jak jest to zaimplementowane w Summary Dashboard.
+        Napisałem swoją implementację wykorzystując bardzo popularną paczkę react-dnd (licencja MIT): https://react-dnd.github.io/react-dnd/about. Działa ona na
+        zasadzie zbliżonej do Reduxa jest na bieżąco rozwijana i nie zanosi się, żeby to się zmieniło. Sortowanie chciałęm wziąć bezpośrednio z documentacji żebyście
+        zobaczyli jak wygląda nie przerabiany kod, to co zostało wzięte z doksów zostało skomentowane. Można tam oczywiście zastosować filtrowanie,
+        paginacje itp ale to wszystko jest dostępne w doksach, nie będę się na tym skupiał.</p>
+        <p>Jeżeli chodzi o sidebar to również jest bez problemu dostępny i ma spore możliwości customizacji. Logika do wyświetlania kontentu po zmianie widgetu na pewno może być
+            lepsza i ładniej ostylowana, ale nie chciałem już na to poświęcać czas. To samo tyczy się nawigacji.</p>
+    </div>
+);
